@@ -47,38 +47,52 @@ class LLMClient:
         if "researcher" in lower:
             content = (
                 "Evidence notes:\n"
-                "- The retrieved corpus contains architecture, evaluation, and failure-mode evidence. "
+                "- The retrieved corpus contains architecture, evaluation, and failure-mode "
+                "evidence. "
                 f"{cited}\n"
-                "- Prefer public-reference evidence for general claims and label synthetic benchmark "
+                "- Prefer public-reference evidence for general claims and label synthetic "
+                "benchmark "
                 "evidence explicitly.\n"
                 "- Preserve disagreements and source provenance across handoffs."
             )
         elif "analyst" in lower:
             content = (
                 "Analysis:\n"
-                "- Multi-agent gains are conditional on meaningful task decomposition and independent "
+                "- Multi-agent gains are conditional on meaningful task decomposition and "
+                "independent "
                 f"verification; coordination adds latency and token cost. {cited}\n"
-                "- A single-agent baseline remains preferable for narrow tasks with little decomposition value.\n"
-                "- Treat synthetic benchmark evidence as illustrative rather than a real publication.\n"
-                "- Evaluate quality, citation coverage, latency, token usage, and failure propagation together."
+                "- A single-agent baseline remains preferable for narrow tasks with little "
+                "decomposition value.\n"
+                "- Treat synthetic benchmark evidence as illustrative rather than a real "
+                "publication.\n"
+                "- Evaluate quality, citation coverage, latency, token usage, and failure "
+                "propagation together."
             )
         elif "critic" in lower:
             content = (
-                "Critic review: preserve source IDs, avoid universal superiority claims, explicitly label "
+                "Critic review: preserve source IDs, avoid universal superiority claims, "
+                "explicitly label "
                 f"synthetic evidence, and retain limitations. {cited}"
             )
         else:
             content = (
                 "## Executive Summary\n"
-                "A multi-agent research workflow is justified when decomposition creates genuinely different "
-                f"evidence or verification needs; otherwise coordination overhead can erase gains. {cited}\n\n"
+                "A multi-agent research workflow is justified when decomposition creates genuinely "
+                "different "
+                "evidence or verification needs; otherwise coordination overhead can erase gains. "
+                f"{cited}\n\n"
                 "## Evidence and Trade-offs\n"
-                "Specialized research and independent analysis can improve coverage and expose unsupported "
-                "claims, but handoffs can duplicate work, drift context, and increase latency and token usage. "
-                "A strong single-agent baseline should therefore remain part of every evaluation.\n\n"
+                "Specialized research and independent analysis can improve coverage and expose "
+                "unsupported "
+                "claims, but handoffs can duplicate work, drift context, and increase latency and "
+                "token usage. "
+                "A strong single-agent baseline should therefore remain part of every "
+                "evaluation.\n\n"
                 "## Recommendation\n"
-                "Use bounded routing, shared provenance-rich state, explicit citation validation, and a "
-                "multi-dimensional benchmark. Label synthetic evidence and preserve unresolved conflicts."
+                "Use bounded routing, shared provenance-rich state, explicit citation validation, "
+                "and a "
+                "multi-dimensional benchmark. Label synthetic evidence and preserve unresolved "
+                "conflicts."
             )
 
         inp = self._estimate_tokens(system_prompt + user_prompt)

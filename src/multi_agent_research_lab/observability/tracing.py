@@ -5,7 +5,6 @@ from __future__ import annotations
 import html
 import json
 from pathlib import Path
-from typing import Any
 
 from multi_agent_research_lab.core.state import ResearchState
 
@@ -37,7 +36,9 @@ def save_trace(state: ResearchState, root: str | Path = "reports/traces") -> tup
             "<section><h3>"
             + html.escape(f"{i}. {event.get('name', 'event')}")
             + "</h3><pre>"
-            + html.escape(json.dumps(event.get("payload", {}), indent=2, ensure_ascii=False, default=str))
+            + html.escape(
+                json.dumps(event.get("payload", {}), indent=2, ensure_ascii=False, default=str)
+            )
             + "</pre></section>"
         )
     html_doc = f"""<!doctype html>
@@ -54,7 +55,7 @@ pre{{white-space:pre-wrap;word-break:break-word}} code{{font-family:ui-monospace
 <span class="badge">tokens={state.input_tokens + state.output_tokens}</span></p>
 <h2>Query</h2><p>{html.escape(state.request.query)}</p>
 <h2>Route history</h2><pre>{html.escape(" → ".join(state.route_history))}</pre>
-{''.join(cards)}
+{"".join(cards)}
 </body></html>"""
     html_path.write_text(html_doc, encoding="utf-8")
     return json_path, html_path

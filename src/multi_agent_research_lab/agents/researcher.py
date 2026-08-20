@@ -33,13 +33,12 @@ class ResearcherAgent(BaseAgent):
         for source in sources:
             sid = str(source.metadata.get("source_id") or "unknown")
             synthetic = " SYNTHETIC" if source.metadata.get("is_synthetic") else ""
-            blocks.append(
-                f"[{sid}]{synthetic} {source.title}\n{source.snippet[:1800]}"
-            )
+            blocks.append(f"[{sid}]{synthetic} {source.title}\n{source.snippet[:1800]}")
 
         response = self.llm_client.complete(
             "You are the Researcher. Extract concise evidence-bearing notes. "
-            "Keep inline [source_id] citations. Distinguish synthetic evidence from public-reference "
+            "Keep inline [source_id] citations. Distinguish synthetic evidence from "
+            "public-reference "
             "evidence. Do not decide the final conclusion.",
             f"Research question: {state.request.query}\n\nSOURCES:\n" + "\n\n".join(blocks),
         )

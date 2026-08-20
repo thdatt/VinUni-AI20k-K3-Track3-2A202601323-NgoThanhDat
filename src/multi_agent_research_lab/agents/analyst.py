@@ -26,8 +26,9 @@ class AnalystAgent(BaseAgent):
             for s in state.sources
         )
         response = self.llm_client.complete(
-            "You are the Analyst. Compare evidence quality, identify disagreements, test counterarguments, "
-            "flag weak/synthetic evidence, and keep [source_id] provenance. Do not write the final report.",
+            "You are the Analyst. Compare evidence quality, identify disagreements, "
+            "test counterarguments, flag weak/synthetic evidence, and keep [source_id] "
+            "provenance. Do not write the final report.",
             f"QUESTION:\n{state.request.query}\n\nSOURCE LEDGER:\n{source_ledger}\n\n"
             f"RESEARCH NOTES:\n{state.research_notes}",
         )

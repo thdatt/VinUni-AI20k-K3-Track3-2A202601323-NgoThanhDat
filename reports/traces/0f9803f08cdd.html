@@ -1,0 +1,67 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Lab20 Trace 0f9803f08cdd</title>
+<style>
+body{font-family:system-ui;max-width:1050px;margin:30px auto;padding:0 18px;background:#f7f7f9}
+section{background:white;border:1px solid #ddd;border-radius:10px;padding:16px;margin:12px 0}
+pre{white-space:pre-wrap;word-break:break-word} code{font-family:ui-monospace}
+.badge{display:inline-block;padding:4px 8px;background:#eee;border-radius:6px;margin-right:6px}
+</style></head><body>
+<h1>Multi-Agent Trace</h1>
+<p><span class="badge">run_id=0f9803f08cdd</span>
+<span class="badge">routes=5</span>
+<span class="badge">tokens=4007</span></p>
+<h2>Query</h2><p>When is a multi-agent architecture justified over a single agent?</p>
+<h2>Route history</h2><pre>researcher → analyst → writer → critic → done</pre>
+<section><h3>1. supervisor.route</h3><pre>{
+  &quot;route&quot;: &quot;researcher&quot;,
+  &quot;iteration&quot;: 1,
+  &quot;has_sources&quot;: false,
+  &quot;has_research_notes&quot;: false,
+  &quot;has_analysis_notes&quot;: false,
+  &quot;has_final_answer&quot;: false
+}</pre></section><section><h3>2. researcher.complete</h3><pre>{
+  &quot;duration_seconds&quot;: 0.059115500014740974,
+  &quot;source_ids&quot;: [
+    &quot;tree_of_thoughts&quot;,
+    &quot;AIAGENT-04:A03&quot;,
+    &quot;AIAGENT-16:A03&quot;,
+    &quot;camel&quot;,
+    &quot;AIAGENT-14:A01&quot;,
+    &quot;AIAGENT-03:A03&quot;
+  ],
+  &quot;source_count&quot;: 6
+}</pre></section><section><h3>3. supervisor.route</h3><pre>{
+  &quot;route&quot;: &quot;analyst&quot;,
+  &quot;iteration&quot;: 2,
+  &quot;has_sources&quot;: true,
+  &quot;has_research_notes&quot;: true,
+  &quot;has_analysis_notes&quot;: false,
+  &quot;has_final_answer&quot;: false
+}</pre></section><section><h3>4. analyst.complete</h3><pre>{
+  &quot;duration_seconds&quot;: 4.050001734867692e-05
+}</pre></section><section><h3>5. supervisor.route</h3><pre>{
+  &quot;route&quot;: &quot;writer&quot;,
+  &quot;iteration&quot;: 3,
+  &quot;has_sources&quot;: true,
+  &quot;has_research_notes&quot;: true,
+  &quot;has_analysis_notes&quot;: true,
+  &quot;has_final_answer&quot;: false
+}</pre></section><section><h3>6. writer.complete</h3><pre>{
+  &quot;duration_seconds&quot;: 3.7999998312443495e-05
+}</pre></section><section><h3>7. supervisor.route</h3><pre>{
+  &quot;route&quot;: &quot;critic&quot;,
+  &quot;iteration&quot;: 4,
+  &quot;has_sources&quot;: true,
+  &quot;has_research_notes&quot;: true,
+  &quot;has_analysis_notes&quot;: true,
+  &quot;has_final_answer&quot;: true
+}</pre></section><section><h3>8. critic.complete</h3><pre>{
+  &quot;duration_seconds&quot;: 9.200000204145908e-05,
+  &quot;citation_coverage&quot;: 1.0,
+  &quot;invalid_citations&quot;: [],
+  &quot;cited_source_count&quot;: 6,
+  &quot;available_source_count&quot;: 6,
+  &quot;synthetic_citations&quot;: [],
+  &quot;synthetic_labeled&quot;: true
+}</pre></section>
+</body></html>

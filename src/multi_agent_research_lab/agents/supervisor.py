@@ -15,7 +15,11 @@ class SupervisorAgent(BaseAgent):
 
     def next_route(self, state: ResearchState) -> str:
         if state.final_answer:
-            return "critic" if self.settings.enable_critic and "critic" not in state.route_history else "done"
+            return (
+                "critic"
+                if self.settings.enable_critic and "critic" not in state.route_history
+                else "done"
+            )
         if state.iteration >= self.settings.max_iterations:
             return "done"
         if not state.sources or not state.research_notes:

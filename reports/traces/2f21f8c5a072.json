@@ -1,0 +1,20 @@
+{
+  "run_id": "2f21f8c5a072",
+  "query": "When is a multi-agent research system justified over a single agent?",
+  "route_history": [
+    "baseline",
+    "done"
+  ],
+  "errors": [],
+  "input_tokens": 2102,
+  "output_tokens": 2810,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "baseline.complete",
+      "payload": {
+        "source_count": 6
+      }
+    }
+  ]
+}

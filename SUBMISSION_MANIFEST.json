@@ -6,22 +6,41 @@
   "student": "Ngo Thanh Dat",
   "notes": [
     "No .env or secret values are included.",
-    "Final provider benchmark must be rerun by user with Groq/OpenAI.",
+    "Final benchmark ran on a real provider: openai/gpt-oss-120b served via OpenRouter (OPENAI_BASE_URL). The Groq path is unchanged but its free tier caps at 200k tokens/day while a full benchmark needs ~111k.",
     "Offline mode exists only for deterministic unit/integration tests."
   ],
   "local_validation": {
+    "ruff": "All checks passed!",
     "pytest": "6 passed",
-    "compileall": "PASS",
-    "offline_baseline": "PASS",
-    "offline_multi_agent": "PASS",
-    "offline_benchmark": "PASS",
-    "real_provider_benchmark": "NOT RUN - requires user's Groq/OpenAI key",
-    "note": "Offline benchmark is explicitly labeled validation-only and is rejected by run_submission.py."
+    "run_baseline": "PASS",
+    "run_multi": "PASS - no Expected TODO panel",
+    "todo_student_remaining": 0,
+    "real_provider_benchmark": "PASS - SUBMISSION_GATE: PASS",
+    "note": "Offline benchmark is validation-only and is rejected by run_submission.py."
   },
   "generated_outputs": [
     "reports/benchmark_report.md",
     "reports/benchmark_results.csv",
     "reports/traces/*.json",
     "reports/traces/*.html"
-  ]
+  ],
+  "benchmark_summary": {
+    "provider": "openai (OpenRouter endpoint)",
+    "model": "openai/gpt-oss-120b",
+    "queries": 6,
+    "single_agent": {
+      "quality": 7.96,
+      "citation_coverage": 0.75,
+      "mean_tokens": 4482,
+      "mean_latency_s": 64.839,
+      "failure_rate": 0.0
+    },
+    "multi_agent": {
+      "quality": 8.58,
+      "citation_coverage": 0.88,
+      "mean_tokens": 14795,
+      "mean_latency_s": 176.816,
+      "failure_rate": 0.0
+    }
+  }
 }

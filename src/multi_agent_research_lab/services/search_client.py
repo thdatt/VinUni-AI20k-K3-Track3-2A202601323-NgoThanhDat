@@ -69,7 +69,9 @@ class SearchClient:
         raw_docs: list[tuple[SourceDocument, str, str]] = []
         for path in topic_files:
             obj = json.loads(path.read_text(encoding="utf-8"))
-            topic_id = str(obj["topic"].get("topic_id") or obj["benchmark_metadata"].get("topic_id") or "")
+            topic_id = str(
+                obj["topic"].get("topic_id") or obj["benchmark_metadata"].get("topic_id") or ""
+            )
             title = str(obj["topic"].get("title") or "")
             kb = obj["knowledge_base"]
 
@@ -118,13 +120,17 @@ class SearchClient:
         for source, text, topic_title in raw_docs:
             terms = Counter(_tokens(f"{topic_title} {source.title} {text}"))
             length = max(1, sum(terms.values()))
-            indexed.append(_IndexedDocument(source=source, terms=terms, length=length, topic_title=topic_title))
+            indexed.append(
+                _IndexedDocument(source=source, terms=terms, length=length, topic_title=topic_title)
+            )
             total_len += length
             for term in terms:
                 df[term] += 1
 
         n = max(1, len(indexed))
-        self._idf = {term: math.log(1.0 + (n - freq + 0.5) / (freq + 0.5)) for term, freq in df.items()}
+        self._idf = {
+            term: math.log(1.0 + (n - freq + 0.5) / (freq + 0.5)) for term, freq in df.items()
+        }
         self._avg_len = total_len / n
         self._docs = indexed
         self._loaded = True

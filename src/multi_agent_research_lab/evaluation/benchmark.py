@@ -2,12 +2,16 @@
 
 from __future__ import annotations
 
-import re
 from collections.abc import Callable
 from time import perf_counter
 
 from multi_agent_research_lab.core.config import Settings, get_settings
-from multi_agent_research_lab.core.schemas import AgentName, AgentResult, BenchmarkMetrics, ResearchQuery
+from multi_agent_research_lab.core.schemas import (
+    AgentName,
+    AgentResult,
+    BenchmarkMetrics,
+    ResearchQuery,
+)
 from multi_agent_research_lab.core.state import ResearchState
 from multi_agent_research_lab.services.llm_client import LLMClient
 from multi_agent_research_lab.services.search_client import SearchClient
@@ -60,17 +64,25 @@ def heuristic_quality(state: ResearchState) -> float:
     valid_citations = len(set(extract_citation_ids(answer)))
     source_diversity = min(1.0, valid_citations / 4)
     lower = answer.lower()
-    analysis_features = sum(
-        int(term in lower)
-        for term in ["trade-off", "tradeoff", "limitation", "counter", "evaluation", "recommend"]
-    ) / 6
+    analysis_features = (
+        sum(
+            int(term in lower)
+            for term in [
+                "trade-off",
+                "tradeoff",
+                "limitation",
+                "counter",
+                "evaluation",
+                "recommend",
+            ]
+        )
+        / 6
+    )
     length_score = min(1.0, len(answer.split()) / 350)
     error_penalty = min(2.0, len(state.errors) * 0.5)
 
     synthetic_ids = {
-        str(s.metadata.get("source_id"))
-        for s in state.sources
-        if s.metadata.get("is_synthetic")
+        str(s.metadata.get("source_id")) for s in state.sources if s.metadata.get("is_synthetic")
     }
     cited = set(extract_citation_ids(answer))
     synthetic_used = bool(cited & synthetic_ids)

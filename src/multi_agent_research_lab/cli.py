@@ -1,5 +1,6 @@
 """Command-line entrypoint."""
 
+import sys
 from typing import Annotated
 
 import typer
@@ -16,6 +17,14 @@ from multi_agent_research_lab.observability.logging import configure_logging
 from multi_agent_research_lab.observability.tracing import save_trace
 
 app = typer.Typer(help="Completed Multi-Agent Research Lab CLI")
+
+# Models routinely emit typographic characters (non-breaking hyphens, dashes,
+# curly quotes). A legacy Windows console is cp1252 and raises UnicodeEncodeError
+# on them, which would crash a run purely while printing its own result.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+
 console = Console()
 
 

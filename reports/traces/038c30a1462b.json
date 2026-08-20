@@ -1,0 +1,102 @@
+{
+  "run_id": "038c30a1462b",
+  "query": "How do cascading hallucinations propagate through multi-agent pipelines, and how can verification contain them?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "errors": [],
+  "input_tokens": 8183,
+  "output_tokens": 7558,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "has_sources": false,
+        "has_research_notes": false,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "researcher.complete",
+      "payload": {
+        "duration_seconds": 42.59691339998972,
+        "source_ids": [
+          "AIAGENT-13:A01",
+          "metagpt",
+          "T13-SYN-C",
+          "T13-SYN-B",
+          "T13-SYN-A",
+          "AIAGENT-13:A05"
+        ],
+        "source_count": 6
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "analyst.complete",
+      "payload": {
+        "duration_seconds": 91.1218134999508
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "writer.complete",
+      "payload": {
+        "duration_seconds": 83.93524530000286
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "critic",
+        "iteration": 4,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": true
+      }
+    },
+    {
+      "name": "critic.complete",
+      "payload": {
+        "duration_seconds": 0.0032281000167131424,
+        "citation_coverage": 0.5,
+        "invalid_citations": [],
+        "cited_source_count": 2,
+        "available_source_count": 6,
+        "synthetic_citations": [
+          "T13-SYN-A"
+        ],
+        "synthetic_labeled": true
+      }
+    }
+  ]
+}

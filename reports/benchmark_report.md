@@ -4,23 +4,23 @@
 
 | Run | Latency (s) | Tokens | Cost (USD) | Quality /10 | Citation cov. | Failure | Sources | Routes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| single-agent | 80.135 | 4649 |  | 3.50 | 0% | 0% | 6 | 2 |
-| multi-agent | 149.466 | 15263 |  | 6.50 | 50% | 0% | 6 | 5 |
-| single-agent | 28.890 | 4760 |  | 3.50 | 0% | 0% | 6 | 2 |
-| multi-agent | 131.993 | 12347 |  | 3.25 | 0% | 0% | 6 | 5 |
-| single-agent | 29.718 | 4488 |  | 3.50 | 0% | 0% | 6 | 2 |
-| multi-agent | 78.806 | 15932 |  | 3.50 | 0% | 0% | 6 | 5 |
-| single-agent | 79.203 | 4983 |  | 3.25 | 0% | 0% | 6 | 2 |
-| multi-agent | 132.738 | 12933 |  | 3.50 | 0% | 0% | 6 | 5 |
-| single-agent | 69.443 | 4836 |  | 3.25 | 0% | 0% | 6 | 2 |
-| multi-agent | 193.759 | 11416 |  | 5.00 | 25% | 0% | 6 | 5 |
-| single-agent | 40.217 | 4734 |  | 3.25 | 0% | 0% | 6 | 2 |
-| multi-agent | 115.064 | 15229 |  | 5.00 | 25% | 0% | 6 | 5 |
+| single-agent | 15.498 | 5010 |  | 3.50 | 0% | 0% | 6 | 2 |
+| multi-agent | 129.326 | 13197 |  | 9.50 | 100% | 0% | 6 | 5 |
+| single-agent | 93.102 | 2969 |  | 6.50 | 50% | 0% | 6 | 2 |
+| multi-agent | 231.475 | 14731 |  | 8.00 | 75% | 0% | 6 | 5 |
+| single-agent | 55.352 | 3953 |  | 9.50 | 100% | 0% | 6 | 2 |
+| multi-agent | 154.432 | 14578 |  | 9.00 | 100% | 0% | 6 | 5 |
+| single-agent | 64.722 | 4716 |  | 9.25 | 100% | 0% | 6 | 2 |
+| multi-agent | 217.664 | 15741 |  | 6.50 | 50% | 0% | 6 | 5 |
+| single-agent | 98.158 | 5002 |  | 9.50 | 100% | 0% | 6 | 2 |
+| multi-agent | 129.329 | 14241 |  | 9.00 | 100% | 0% | 6 | 5 |
+| single-agent | 62.200 | 5240 |  | 9.50 | 100% | 0% | 6 | 2 |
+| multi-agent | 198.668 | 16283 |  | 9.50 | 100% | 0% | 6 | 5 |
 
 ## Aggregate
 
-- **single-agent**: mean latency 54.601s; mean quality 3.38/10; mean citation coverage 0%; mean tokens 4742; failure rate 0%.
-- **multi-agent**: mean latency 133.638s; mean quality 4.46/10; mean citation coverage 17%; mean tokens 13853; failure rate 0%.
+- **single-agent**: mean latency 64.839s; mean quality 7.96/10; mean citation coverage 75%; mean tokens 4482; failure rate 0%.
+- **multi-agent**: mean latency 176.816s; mean quality 8.58/10; mean citation coverage 88%; mean tokens 14795; failure rate 0%.
 
 ## Interpretation
 

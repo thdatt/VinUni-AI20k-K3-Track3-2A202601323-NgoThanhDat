@@ -15,7 +15,8 @@ def render_markdown_report(metrics: list[BenchmarkMetrics]) -> str:
         "> Quality is a transparent heuristic proxy unless a human/LLM judge is added. "
         "Final submission should record the provider used.",
         "",
-        "| Run | Latency (s) | Tokens | Cost (USD) | Quality /10 | Citation cov. | Failure | Sources | Routes |",
+        "| Run | Latency (s) | Tokens | Cost (USD) | Quality /10 | Citation cov. | Failure | "
+        "Sources | Routes |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for item in metrics:
@@ -46,17 +47,23 @@ def render_markdown_report(metrics: list[BenchmarkMetrics]) -> str:
         "",
         "## Interpretation",
         "",
-        "- Multi-agent is justified only if its quality/citation gains compensate for extra token, latency, "
+        "- Multi-agent is justified only if its quality/citation gains compensate for extra token, "
+        "latency, "
         "handoff, and integration cost.",
-        "- The single-agent baseline is intentionally retained because narrow tasks may not benefit from decomposition.",
-        "- Failure analysis should inspect the saved route/event trace rather than infer causality from the final answer alone.",
+        "- The single-agent baseline is intentionally retained because narrow tasks may not "
+        "benefit from decomposition.",
+        "- Failure analysis should inspect the saved route/event trace rather than infer causality "
+        "from the final answer alone.",
         "",
         "## Failure Mode and Fix",
         "",
-        "**Failure mode:** duplicated or weak evidence can be amplified across handoffs and look like consensus.",
+        "**Failure mode:** duplicated or weak evidence can be amplified across handoffs and look "
+        "like consensus.",
         "",
-        "**Fix:** the Researcher preserves source IDs, the Analyst explicitly compares evidence quality, the Writer "
-        "must cite source IDs, and the Critic checks citation validity/synthetic labeling. Supervisor routing is bounded "
+        "**Fix:** the Researcher preserves source IDs, the Analyst explicitly compares evidence "
+        "quality, the Writer "
+        "must cite source IDs, and the Critic checks citation validity/synthetic labeling. "
+        "Supervisor routing is bounded "
         "by `MAX_ITERATIONS` and provider calls use bounded retries/timeouts.",
         "",
     ]

@@ -27,8 +27,10 @@ class WriterAgent(BaseAgent):
         )
         response = self.llm_client.complete(
             "You are the Writer. Produce a clear evidence-grounded answer for technical learners. "
-            "Cite factual claims with [source_id]. Explicitly label synthetic benchmark evidence when used. "
-            "Include counterarguments, trade-offs, limitations, evaluation criteria, and a recommendation. "
+            "Cite factual claims with [source_id]. Explicitly label synthetic benchmark evidence "
+            "when used. "
+            "Include counterarguments, trade-offs, limitations, evaluation criteria, and a "
+            "recommendation. "
             "Never claim universal superiority.",
             f"QUESTION:\n{state.request.query}\n\nSOURCE LEDGER:\n{ledger}\n\n"
             f"RESEARCH NOTES:\n{state.research_notes}\n\nANALYSIS:\n{state.analysis_notes}",
