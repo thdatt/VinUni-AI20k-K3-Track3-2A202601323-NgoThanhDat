@@ -1,0 +1,100 @@
+{
+  "run_id": "a53f9759237a",
+  "query": "How should autonomous agent systems defend against prompt injection and tool poisoning?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "errors": [],
+  "input_tokens": 7821,
+  "output_tokens": 7408,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "has_sources": false,
+        "has_research_notes": false,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "researcher.complete",
+      "payload": {
+        "duration_seconds": 22.31926650000969,
+        "source_ids": [
+          "AIAGENT-24:A01",
+          "T24-SYN-C",
+          "T24-SYN-B",
+          "owasp_llm",
+          "T24-SYN-A",
+          "AIAGENT-24:A05"
+        ],
+        "source_count": 6
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "analyst.complete",
+      "payload": {
+        "duration_seconds": 40.26795230002608
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "writer.complete",
+      "payload": {
+        "duration_seconds": 52.47053690004395
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "critic",
+        "iteration": 4,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": true
+      }
+    },
+    {
+      "name": "critic.complete",
+      "payload": {
+        "duration_seconds": 0.00012919999426230788,
+        "citation_coverage": 0.25,
+        "invalid_citations": [],
+        "cited_source_count": 1,
+        "available_source_count": 6,
+        "synthetic_citations": [],
+        "synthetic_labeled": true
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Domain-specific errors for the lab skeleton."""
+"""Domain-specific errors."""
 
 
 class LabError(Exception):
@@ -6,11 +6,11 @@ class LabError(Exception):
 
 
 class StudentTodoError(LabError):
-    """Raised where learners are expected to implement core logic."""
+    """Kept for starter compatibility; completed code should not raise this."""
 
 
 class AgentExecutionError(LabError):
-    """Raised when an agent fails after retries/fallbacks."""
+    """Raised when an agent fails after bounded retries/fallbacks."""
 
 
 class ValidationError(LabError):

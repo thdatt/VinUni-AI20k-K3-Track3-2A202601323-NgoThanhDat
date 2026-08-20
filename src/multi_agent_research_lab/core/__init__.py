@@ -1,1 +1,1 @@
-"""Core config, state, schemas, and errors."""
+"""Core package."""

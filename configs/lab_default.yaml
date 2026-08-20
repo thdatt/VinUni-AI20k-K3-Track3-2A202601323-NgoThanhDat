@@ -1,24 +1,25 @@
 lab:
   name: multi-agent-research-lab
   max_iterations: 6
-  timeout_seconds: 60
+  timeout_seconds: 90
 
 agents:
   supervisor:
-    model: gpt-4o-mini
-    temperature: 0.0
+    policy: deterministic-state-router
   researcher:
-    model: gpt-4o-mini
-    temperature: 0.2
+    max_sources: 6
   analyst:
-    model: gpt-4o-mini
-    temperature: 0.1
+    require_evidence_quality_comparison: true
   writer:
-    model: gpt-4o-mini
-    temperature: 0.4
+    require_citations: true
+  critic:
+    enabled: true
 
 benchmark:
   queries:
-    - "Research GraphRAG state-of-the-art and write a 500-word summary"
-    - "Compare single-agent and multi-agent workflows for customer support"
-    - "Summarize production guardrails for LLM agents"
+    - "When is a multi-agent architecture justified over a single agent for complex research tasks?"
+    - "How should roles be specialized in a multi-agent system without creating excessive coordination overhead?"
+    - "How should shared state preserve context and provenance across multi-agent handoffs?"
+    - "How do cascading hallucinations propagate through multi-agent pipelines, and how can verification contain them?"
+    - "What are the cost, latency, and parallelism trade-offs in multi-agent research systems?"
+    - "How should autonomous agent systems defend against prompt injection and tool poisoning?"

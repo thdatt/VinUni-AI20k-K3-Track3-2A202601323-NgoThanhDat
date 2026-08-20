@@ -1,0 +1,20 @@
+{
+  "run_id": "a4411b712f59",
+  "query": "When is a multi-agent architecture justified over a single agent for complex research tasks?",
+  "route_history": [
+    "baseline",
+    "done"
+  ],
+  "errors": [],
+  "input_tokens": 2901,
+  "output_tokens": 195,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "baseline.complete",
+      "payload": {
+        "source_count": 6
+      }
+    }
+  ]
+}

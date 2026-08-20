@@ -1,0 +1,104 @@
+{
+  "run_id": "add1794911fb",
+  "query": "How should shared state preserve context and provenance across multi-agent handoffs?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "errors": [
+    "Critic found invalid citations: synthetic"
+  ],
+  "input_tokens": 8317,
+  "output_tokens": 7454,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "has_sources": false,
+        "has_research_notes": false,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "researcher.complete",
+      "payload": {
+        "duration_seconds": 29.658476100012194,
+        "source_ids": [
+          "AIAGENT-10:A01",
+          "AIAGENT-13:A01",
+          "AIAGENT-10:A02",
+          "AIAGENT-10:A05",
+          "AIAGENT-23:A01",
+          "AIAGENT-25:A01"
+        ],
+        "source_count": 6
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "analyst.complete",
+      "payload": {
+        "duration_seconds": 32.343468000006396
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "writer.complete",
+      "payload": {
+        "duration_seconds": 50.248471300001256
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "critic",
+        "iteration": 4,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": true
+      }
+    },
+    {
+      "name": "critic.complete",
+      "payload": {
+        "duration_seconds": 0.00011449999874457717,
+        "citation_coverage": 0.0,
+        "invalid_citations": [
+          "synthetic"
+        ],
+        "cited_source_count": 0,
+        "available_source_count": 6,
+        "synthetic_citations": [],
+        "synthetic_labeled": true
+      }
+    }
+  ]
+}

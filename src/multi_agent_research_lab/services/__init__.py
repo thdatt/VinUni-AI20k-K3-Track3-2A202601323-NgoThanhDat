@@ -1,1 +1,1 @@
-"""Service clients."""
+"""Services package."""

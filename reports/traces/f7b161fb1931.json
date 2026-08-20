@@ -1,0 +1,100 @@
+{
+  "run_id": "f7b161fb1931",
+  "query": "When is a multi-agent architecture justified over a single agent?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "errors": [],
+  "input_tokens": 3592,
+  "output_tokens": 415,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "has_sources": false,
+        "has_research_notes": false,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "researcher.complete",
+      "payload": {
+        "duration_seconds": 0.07258679997175932,
+        "source_ids": [
+          "tree_of_thoughts",
+          "AIAGENT-04:A03",
+          "AIAGENT-16:A03",
+          "camel",
+          "AIAGENT-14:A01",
+          "AIAGENT-03:A03"
+        ],
+        "source_count": 6
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "analyst.complete",
+      "payload": {
+        "duration_seconds": 4.47999918833375e-05
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "writer.complete",
+      "payload": {
+        "duration_seconds": 4.169996827840805e-05
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "critic",
+        "iteration": 4,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": true
+      }
+    },
+    {
+      "name": "critic.complete",
+      "payload": {
+        "duration_seconds": 4.490005085244775e-05,
+        "citation_coverage": 1.0,
+        "invalid_citations": [],
+        "cited_source_count": 6,
+        "available_source_count": 6,
+        "synthetic_citations": [],
+        "synthetic_labeled": true
+      }
+    }
+  ]
+}

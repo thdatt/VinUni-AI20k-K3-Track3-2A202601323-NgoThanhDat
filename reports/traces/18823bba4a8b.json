@@ -1,0 +1,104 @@
+{
+  "run_id": "18823bba4a8b",
+  "query": "How do cascading hallucinations propagate through multi-agent pipelines, and how can verification contain them?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "errors": [
+    "Critic found invalid citations: MetaGPT"
+  ],
+  "input_tokens": 6948,
+  "output_tokens": 5985,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "has_sources": false,
+        "has_research_notes": false,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "researcher.complete",
+      "payload": {
+        "duration_seconds": 47.95634409994818,
+        "source_ids": [
+          "AIAGENT-13:A01",
+          "metagpt",
+          "T13-SYN-C",
+          "T13-SYN-B",
+          "T13-SYN-A",
+          "AIAGENT-13:A05"
+        ],
+        "source_count": 6
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "analyst.complete",
+      "payload": {
+        "duration_seconds": 10.316543900000397
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "writer.complete",
+      "payload": {
+        "duration_seconds": 74.45761509996373
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "critic",
+        "iteration": 4,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": true
+      }
+    },
+    {
+      "name": "critic.complete",
+      "payload": {
+        "duration_seconds": 0.00014720001490786672,
+        "citation_coverage": 0.0,
+        "invalid_citations": [
+          "MetaGPT"
+        ],
+        "cited_source_count": 0,
+        "available_source_count": 6,
+        "synthetic_citations": [],
+        "synthetic_labeled": true
+      }
+    }
+  ]
+}

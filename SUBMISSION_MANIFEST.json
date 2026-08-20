@@ -1,0 +1,27 @@
+{
+  "base_repository": "thdatt/VinUni-AI20k-K3-Track3-2A202601323-NgoThanhDat",
+  "base_commit_observed": "102cd12565aaad8b7790493a9f6a29743396fa04",
+  "corpus": "AI Agent Offline Research Corpus Benchmark v2",
+  "corpus_topics": 30,
+  "student": "Ngo Thanh Dat",
+  "notes": [
+    "No .env or secret values are included.",
+    "Final provider benchmark must be rerun by user with Groq/OpenAI.",
+    "Offline mode exists only for deterministic unit/integration tests."
+  ],
+  "local_validation": {
+    "pytest": "6 passed",
+    "compileall": "PASS",
+    "offline_baseline": "PASS",
+    "offline_multi_agent": "PASS",
+    "offline_benchmark": "PASS",
+    "real_provider_benchmark": "NOT RUN - requires user's Groq/OpenAI key",
+    "note": "Offline benchmark is explicitly labeled validation-only and is rejected by run_submission.py."
+  },
+  "generated_outputs": [
+    "reports/benchmark_report.md",
+    "reports/benchmark_results.csv",
+    "reports/traces/*.json",
+    "reports/traces/*.html"
+  ]
+}

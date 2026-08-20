@@ -1,0 +1,104 @@
+{
+  "run_id": "779b68f2f0e9",
+  "query": "What are the cost, latency, and parallelism trade-offs in multi-agent research systems?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "errors": [],
+  "input_tokens": 3617,
+  "output_tokens": 400,
+  "estimated_cost_usd": 0.0,
+  "events": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "has_sources": false,
+        "has_research_notes": false,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "researcher.complete",
+      "payload": {
+        "duration_seconds": 0.003297009999982947,
+        "source_ids": [
+          "AIAGENT-22:A01",
+          "AIAGENT-01:A01",
+          "T22-SYN-C",
+          "T22-SYN-A",
+          "T22-SYN-B",
+          "react"
+        ],
+        "source_count": 6
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": false,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "analyst.complete",
+      "payload": {
+        "duration_seconds": 2.4296999981743284e-05
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": false
+      }
+    },
+    {
+      "name": "writer.complete",
+      "payload": {
+        "duration_seconds": 1.808700000083263e-05
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "critic",
+        "iteration": 4,
+        "has_sources": true,
+        "has_research_notes": true,
+        "has_analysis_notes": true,
+        "has_final_answer": true
+      }
+    },
+    {
+      "name": "critic.complete",
+      "payload": {
+        "duration_seconds": 0.0003379620000032446,
+        "citation_coverage": 1.0,
+        "invalid_citations": [],
+        "cited_source_count": 6,
+        "available_source_count": 6,
+        "synthetic_citations": [
+          "T22-SYN-A",
+          "T22-SYN-B",
+          "T22-SYN-C"
+        ],
+        "synthetic_labeled": true
+      }
+    }
+  ]
+}

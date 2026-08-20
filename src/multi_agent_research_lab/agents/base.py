@@ -1,8 +1,4 @@
-"""Base agent contract.
-
-The concrete agent classes intentionally contain TODOs. The goal is to force students
-to make design decisions instead of receiving a finished implementation.
-"""
+"""Base agent contract."""
 
 from abc import ABC, abstractmethod
 
@@ -10,8 +6,6 @@ from multi_agent_research_lab.core.state import ResearchState
 
 
 class BaseAgent(ABC):
-    """Minimal interface every agent must implement."""
-
     name: str
 
     @abstractmethod

@@ -1,13 +1,17 @@
-.venv/
-__pycache__/
-*.pyc
 .env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
 dist/
 build/
 *.egg-info/
-reports/*.json
-reports/*.md
-!.gitkeep
+.DS_Store
+.ipynb_checkpoints/
+reports/traces/*.tmp
+gate.log
+# duplicate of data/offline_corpus (same 30 topics, byte-identical)
+ai_agent_offline_research_corpus_v2/
